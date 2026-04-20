@@ -1,7 +1,7 @@
 name: First workflow
 on: push
 jobs:
-  npm install:
+  npm-install:
     runs-on: macos-latest
     steps:
       - name: Get code
