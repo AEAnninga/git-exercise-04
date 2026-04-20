@@ -1,7 +1,21 @@
 name: First workflow
 on: push
 jobs:
-  npm-install:
+  npm-lint:
+    runs-on: macos-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v6
+      - name: Install node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm lint
+  npm-test:
+    needs: [npm-lint]
     runs-on: macos-latest
     steps:
       - name: Get code
