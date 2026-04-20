@@ -1,7 +1,5 @@
 name: First workflow
-on:
-  issues:
-    types: []
+on: issues
 jobs:
   display-issue:
     runs-on: macos-latest
