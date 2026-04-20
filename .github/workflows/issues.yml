@@ -1,12 +1,10 @@
 name: First workflow
-on: 
-  issues
+on:
+  issues:
     types: []
 jobs:
   display-issue:
     runs-on: macos-latest
     steps:
-      name: Display issue
-      run: echo "${{ toJson(github) }}"
-
-  
+      - name: Display issue
+        run: echo "${{ toJson(github) }}"
